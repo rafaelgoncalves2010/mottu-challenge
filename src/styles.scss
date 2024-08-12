@@ -1,0 +1,108 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal; 
+}
+
+.mat-form-field-label {
+  color: #CACACA;
+  font-weight: 300;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #3D3D3D;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #CACACA;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #CACACA;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #CACACA;;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-start {
+  border-radius: 13px 0 0 13px;
+  border-right-style: none;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-radius: 0 13px 13px 0;
+  border-right-style: none;
+}
+
+.titulo-principal{
+    font-family: "Creepster", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+    color: #00B5CC;
+    display: inline-block;
+    position: relative;
+    text-shadow:
+      2px 0 #B2DF28,
+      -2px 0 #B2DF28,
+      0 2px #B2DF28,
+      0 -2px #B2DF28,
+      2px 2px #B2DF28,
+      -2px 2px #B2DF28,
+      2px -2px #B2DF28,
+      -2px -2px #B2DF28;
+}
+
+
+
+

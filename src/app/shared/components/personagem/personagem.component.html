@@ -1,0 +1,13 @@
+<article (click)="verificarStatusPersonagem()" [title]="rotaAtual == '/inicio' ? 'Favoritar Personagem' : 'Excluir Personagem'">
+  <div class="coracao-container" [ngClass]="{'preenchido': personagemFavorito, 'excluir': rotaAtual != '/inicio'}">
+    <mat-icon class="icone-coracao" *ngIf="rotaAtual == '/inicio'" [ngClass]="{'coracao-preenchido': personagemFavorito}">favorite</mat-icon>
+    <mat-icon *ngIf="rotaAtual != '/inicio'" class="icone-exluir">delete</mat-icon>
+  </div>
+  <figure>
+    <img [src]="personagem?.image" [alt]="personagem?.name">
+  </figure>
+  <div class="informacoes-personagem">
+    <h2 class="nome-personagem">{{personagem?.name}}</h2>
+    <p class="caracteristicas-personagem">{{personagem?.species}}</p>
+  </div>
+</article>

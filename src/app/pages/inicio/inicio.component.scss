@@ -1,0 +1,136 @@
+@import '../../../styles/variaveis_cores.scss';
+
+.inicio {
+  min-height: 100vh;
+  background-color: $cinza_escuro;
+  padding-bottom: 4rem;
+
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-top: 3rem;
+
+    .barra-de-pesquisa {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .mat-form-field {
+    width: 328px;
+    color: $cinza_claro;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-top: 0.5rem;
+  }
+
+  .nao-encontrado {
+    text-align: center;
+    background-color: $preto;
+    padding: 14.3rem 0;
+    border: 1px solid $cinza_medio;
+    border-radius: 1rem;
+
+    h3 {
+      color: $gelo;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: -0.02em;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $cinza_claro;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 27px;
+    }
+  }
+
+  .loader-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border-width: 3px;
+      border-style: dashed solid solid dotted;
+      border-color: $cor_spinner $cor_spinner transparent $cor_spinner;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    .loader::after {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      left: 20px;
+      top: 31px;
+      border: 10px solid transparent;
+      border-right-color: $cor_spinner;
+      transform: rotate(-40deg);
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .barra-de-pesquisa {
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+
+      .grid-item {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .barra-de-pesquisa {
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .grid-container {
+      grid-template-columns: 1fr;
+
+      .grid-item {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

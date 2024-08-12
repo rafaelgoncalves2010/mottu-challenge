@@ -1,0 +1,97 @@
+@import '../../../styles/variaveis_cores.scss';
+
+.navbar {
+    background-color: $preto;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+
+    &.sticky {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transform: translateY(0);
+        animation: slideDown 0.3s ease-in-out forwards;
+    }
+
+    .navbar-content {
+        display: flex;
+        padding: 0 1.4rem;
+        justify-content: space-between;
+
+        .navbar-logo {
+            img {
+                width: 114px;
+                height: 64px;
+            }
+        }
+
+        .navbar-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+
+            .navbar-item {
+                color: $cinza_claro;
+                display: flex;
+                align-items: center;
+                border: 1px solid $cinza_medio;
+                padding: 0.6rem 0.7rem;
+                cursor: pointer;
+
+                mat-icon {
+                    font-size: 19px;
+                    display: flex;
+                    align-items: center;
+                    width: auto;
+                    padding: 0 0.5rem 0 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $cinza_claro;
+                }
+
+                span {
+                    color: $preto;
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    background-color: $branco;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 1rem;
+                    margin-left: 0.7rem;
+                }
+            }
+
+            li:nth-child(1) {
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+            }
+
+            li:nth-child(2) {
+                border-top-right-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                border-left: none;
+            }
+
+            .rota-ativa {
+                background-color: $branco;
+                color: $preto;
+
+                a {
+                    color: $preto;
+                }
+
+                span {
+                    background-color: $preto;
+                    color: $branco;
+                }
+            }
+        }
+    }
+}

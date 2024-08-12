@@ -1,0 +1,20 @@
+<nav class="navbar" [class.sticky]="isSticky">
+    <div class="navbar-content">
+        <div class="navbar-logo">
+            <a routerLink="/inicio" aria-label="Rick and Morty">
+                <img src="assets/logo/logo.png" alt="Rick and Morty" />
+            </a>
+        </div>
+        <ul class="navbar-menu">
+            <li class="navbar-item" routerLink="/inicio" [ngClass]="{ 'rota-ativa': rotaAtiva('/inicio') }">
+                <mat-icon>home</mat-icon>
+                <a aria-label="Home">Início</a>
+            </li>
+            <li class="navbar-item" routerLink="/favoritos" [ngClass]="{ 'rota-ativa': rotaAtiva('/favoritos') }">
+                <mat-icon>favorite</mat-icon>
+                <a aria-label="About">Favoritos</a>
+                <span *ngIf="(favoritos$ | async) as favoritos">{{ favoritos.length }}</span>
+            </li>
+        </ul>
+    </div>
+</nav>

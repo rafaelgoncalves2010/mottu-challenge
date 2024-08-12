@@ -1,0 +1,75 @@
+@import '../../../../styles/variaveis_cores.scss';
+
+article {
+    max-width: 224px;
+    background-color: 000;
+    border: 1px solid $cinza_medio;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .coracao-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        border-radius: 40px;
+        top: -35px;
+        right: -37px;
+
+        .icone-coracao,
+        .icone-exluir {
+            font-size: 20px;
+            cursor: pointer;
+            color: transparent;
+            -webkit-text-stroke: 1px $branco;
+            position: absolute;
+            top: 3rem;
+            right: 2.6rem;
+
+            &.coracao-preenchido {
+                color: $preto;
+                -webkit-text-stroke: 0px;
+            }
+        }
+
+        &.preenchido {
+            background-color: $branco;
+        }
+
+        .icone-exluir {
+            color: #df4040;
+            -webkit-text-stroke: $preto;
+        }
+
+        &.excluir {
+            background-color: #fbb1b1;
+        }
+    }
+
+    .informacoes-personagem {
+        padding-bottom: 0.8rem;
+        overflow: hidden;
+
+        .nome-personagem {
+            font-family: "Creepster", system-ui;
+            margin: 0.7rem 0 0.6rem 0.8rem;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+            color: $branco;
+        }
+
+        .caracteristicas-personagem {
+            color: $cinza_claro;
+            margin: 0.7rem 0 0 0.8rem;
+        }
+    }
+}

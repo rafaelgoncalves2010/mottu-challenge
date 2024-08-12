@@ -1,0 +1,31 @@
+<section class="inicio">
+    <div class="content">
+        <div class="barra-de-pesquisa">
+            <h1 class="titulo-principal">Início</h1>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Pesquisar</mat-label>
+                <input matInput [formControl]="campoPesquisar">
+            </mat-form-field>
+        </div>
+
+        <div class="grid-container" *ngIf="personagens; else personagemNaoEncontrado">
+            <div class="grid-item" *ngFor="let personagem of personagens">
+                <app-personagem 
+                    [personagem]=personagem
+                    (personagemFavoritoClicado)="mudarStatusPersonagem($event, personagem)">
+                </app-personagem>
+            </div>
+        </div>
+        <div *ngIf="loading && personagens != undefined" class="loader-container">
+            <span class="loader"></span>
+        </div>
+
+        <ng-template #personagemNaoEncontrado>
+            <div class="nao-encontrado">
+                <h3>Nada foi encontrado</h3>
+                <p>Tente realizar uma nova busca.</p>
+            </div>
+        </ng-template>
+    </div>
+</section>

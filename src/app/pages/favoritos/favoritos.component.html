@@ -1,0 +1,24 @@
+<section class="favoritos">
+    <div class="content">
+        <h1 class="titulo-principal">Favoritos</h1>
+
+        <div class="grid-container" *ngIf="(favoritos$ | async)?.length; else personagemNaoEncontrado">
+            <div class="grid-item" *ngFor="let favorito of favoritos$ | async">
+                <app-personagem [personagem]=favorito
+                (click)="removerFavorito(favorito)" ></app-personagem>
+            </div>
+        </div>
+
+        <ng-template #personagemNaoEncontrado>
+          <div class="nao-encontrado">
+              <h3>Parece que você ainda não tem favoritos</h3>
+              <p>Volte à página inicial e escolha os melhores para você.</p>
+
+              <div class="voltar-inicio">
+                  <a class="voltar" routerLink="/inicio">Voltar ao início</a>
+              </div>
+          </div>
+      </ng-template> 
+
+    </div>
+</section>
